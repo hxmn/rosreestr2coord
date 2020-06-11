@@ -1,5 +1,7 @@
 from distutils.core import setup
+
 from setuptools import find_packages
+
 from version import VERSION
 
 setup(
@@ -27,21 +29,21 @@ setup(
         # that you indicate whether you support Python 2, Python 3 or both.
         # 'Programming Language :: Python :: 2',
         # 'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        # 'Programming Language :: Python :: 3',
+        # 'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         # 'Programming Language :: Python :: 3.3',
         # 'Programming Language :: Python :: 3.4',
         # 'Programming Language :: Python :: 3.5',
     ],
     description='Get geometry from rosreestr',
     long_description='Get area coordinates by its cadastral number',
-    install_requires=["numpy", "Pillow"],
+    install_requires=["numpy", "Pillow", "opencv-python", "matplotlib"],
     url='https://github.com/rendrom/rosreestr2coord',
     author='Artemiy Doroshkov',
     author_email='rendrom@gmail.com',
     entry_points={
         'console_scripts': [
-            'rosreestr2coord=scripts.console:main',
+            'rosreestr2coord=rosreestr2coord.console:console',
         ],
     },
 )
